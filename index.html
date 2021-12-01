@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gihub Profile Finder</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+</head>
+<body>
+
+    <header>
+        <div>
+            <h1 class="header-title">Github Profile Finder <a href="https://www.github.com"><i id="gth-icon" class="fab fa-github"></i></a></h1>
+        </div>
+        <div class="icon-area">
+            <i class="fas fa-moon fa-2x dark"></i>
+        </div>
+    </header>
+
+    <form id="search-form">
+        <h1 class="info">Search <strong>GitHub</strong> profiles</h1>
+        <input autofocus autocomplete="off" type="text" id="search_input" placeholder="Enter github profile username e.g (mojombo)" required>
+        <button type="submit">
+            Search
+        </button>
+    </form>
+
+    <div id="info-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="info-modal-title">
+                    Someone's Repos
+                </h2>
+                <i id="info-modal-close" class="fas fa-times-circle fa-2x"></i>
+            </div>
+            <hr>
+            <div class="modal-body">
+                <div id="content">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="loading-modal" class="modal loading-modal">
+        <div class="loader"></div>
+    </div>
+
+    <div class="user-list">
+        <!-- render github users -->
+    </div>
+
+    <!-- my JS -->
+    <script src="scripts/app.js"></script>
+    <script type="module" src="scripts/toggle.js"></script>
+    <script type="module" src="scripts/state.js"></script>
+    <!-- sweet alert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
