@@ -44,6 +44,15 @@ const displayTextColor = () => {
     document.querySelector('.info-modal-title').style.color = '#' + textColor;
 }
 
+const setAppToggleIcon = (icon) => {
+    document.querySelector('.icon-area').innerHTML = icon;
+}
+
+const displayAppToggleIcon = () => {
+    const toggleIcon = StateValue.getToggleIcon();
+    document.querySelector('.icon-area').innerHTML = toggleIcon;
+}
+
 // toggle between themes
 document.querySelector('header').addEventListener('click', e => {
     const element = e.target.classList;
@@ -57,7 +66,9 @@ document.querySelector('header').addEventListener('click', e => {
 
         StateValue.addTextColor('333');
 
-        document.querySelector('.icon-area').innerHTML = `<i class="fas fa-moon fa-2x dark"></i>`;
+        setAppToggleIcon(`<i class="fas fa-moon fa-2x dark"></i>`);
+
+        StateValue.addToggleIcon(`<i class="fas fa-moon fa-2x dark"></i>`);
     } else if (element.contains('dark')) {
         setAppBgColor('333');
 
@@ -67,12 +78,15 @@ document.querySelector('header').addEventListener('click', e => {
 
         StateValue.addTextColor('fff');
 
-        document.querySelector('.icon-area').innerHTML = `<i class="fas fa-sun fa-2x light"></i>`;
+        setAppToggleIcon(`<i class="fas fa-sun fa-2x light"></i>`);
+
+        StateValue.addToggleIcon(`<i class="fas fa-sun fa-2x light"></i>`);
     }
 
 });
 
 document.addEventListener('DOMContentLoaded', () => {
     displayAppBgColor();
-    displayTextColor();
+    displayTextColor()
+    displayAppToggleIcon();
 });
