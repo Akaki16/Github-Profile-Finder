@@ -46,14 +46,17 @@ const renderProfileCard = (users) => {
 }
 
 const renderGithubUsers = () => {
-    const API = 'https://api.github.com/users';
+    const USERS = 'https://api.github.com/users';
 
     // show loading
     showModal('loading-modal');
-    fetch(API, {mode: 'cors'})
+    fetch(USERS, {mode: 'cors'})
     .then((response) => {
         if (response.ok) {
             return response.json();
+        } else {
+            Swal.fire('Could not load GitHub users. Something unexpected happened.');
+            closeModal('loading-modal');
         }
     })
     .then((users) => {
@@ -188,7 +191,7 @@ searchForm.addEventListener('submit', e => {
         if (response.ok) {
             return response.json();
         } else {
-            Swal.fire('Could not find github profile, try again later.');
+            Swal.fire('Could not find github profile.');
             closeModal('loading-modal');
             clearInput(searchInput);
         }
