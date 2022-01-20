@@ -4,9 +4,11 @@
 
 This project is created with HTML, CSS and Vanilla JavaScript.
 
-This project uses GitHub [API](https://api.github.com/)
+It uses GitHub [API](https://api.github.com/).
 
-You can search any GitHub users
+You can search any GitHub users.
+
+[live demo](https://akaki16.github.io/Github-Profile-Finder/)
 
 ### Running Docs
 
